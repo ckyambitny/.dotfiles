@@ -12,12 +12,39 @@ Plugin 'gmarik/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
-"Pluginy od Piotra
-Plugin 'pangloss/vim-javascript'
-"JS plugin
 
 
-" All of your Plugins must be added before the following line
+" My bundles here:
+Plugin 'flazz/vim-colorschemes'
+" Colors 
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+" you should have ctags 5.x, recommend: 'brew install ctags' after that set 'alias ctags=/usr/local/Cellar/ctags/5.8/bin/ctags'
+Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-surround'
+Plugin 'Townk/vim-autoclose'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'matze/vim-move'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-fugitive'
+Plugin 'mattn/emmet-vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'jistr/vim-nerdtree-tabs'
+" set the same state of NERDTree in each tab
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+" set dirty changes in NERDTree
+Plugin 'elzr/vim-json'
+" support highlight of JSON files
+Plugin 'leafgarland/typescript-vim'
+" support highlight to TypeScript files
+Plugin 'othree/html5.vim'
+" Support HTML5 All of your Plugins must be added before the following line
+
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -25,9 +52,9 @@ filetype plugin indent on    " required
 "
 " Brief help
 " :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" :PluginInstall    - installs plugins append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
