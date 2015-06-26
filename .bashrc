@@ -8,6 +8,33 @@ case $- in
       *) return;;
 esac
 
+if [ -f ~/.git-prompt.sh ]; then
+    source ~/.git-prompt.sh
+    #. ~/.git-prompt.sh
+fi
+
+function git-rename-tag {
+    old=$1
+    new=$2
+
+    test -z $old && echo "old tag name required." 1>&2 && exit 1
+    test -z $new && echo "new tag name required." 1>&2 && exit 1
+
+    git tag $new $old
+    git tag -d $old
+    git push origin :refs/tags/$old
+}
+
+function git-refresh-tags {
+    git tag -l | xargs git tag -d
+    git fetch
+}
+
+# Git prompt
+#export GITAWAREPROMPT=~/.bash/git-aware-prompt
+#source "${GITAWAREPROMPT}/main.sh"
+
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -57,7 +84,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]cky\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -101,7 +129,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
-source ~/git-flow-completion.bash
+
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -112,3 +141,31 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Git branch bash completion
+if [ -f ~/.git-completion.bash ]; then
+      . ~/.git-completion.bash
+
+    # Lets make aliases autocomplete!
+    __git_complete g __git_main
+    __git_complete gco _git_checkout
+    __git_complete gp _git_push
+    __git_complete gb _git_branch
+    __git_complete bg _git_branch
+
+fi
+
+
+export NVM_DIR="/home/cky/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+#NodeVersionManager start
+nvm use v6.1.0
+
+
+export PATH=$PATH:$HOME/.git-radar
+export PATH=$PATH:$HOME/.git-radar
+
+export PS1="$PS1\$(git-radar --bash --fetch)"
