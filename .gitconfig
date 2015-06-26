@@ -1,0 +1,8 @@
+[user]
+	name = Bartłomiej Sobczuk
+	email = bartlomiej.sobczuk@gmail.com
+[core]
+	editor = vim
+	excludesfile = /home/cky/.gitignore
+[push]
+	default = matching
