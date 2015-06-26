@@ -59,23 +59,98 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" Editor
+" ----------------------------------------------------------------------------
 
-set number 
-set hlsearch 
-set incsearch
-set title
-set wildmenu
-set mouse=a
-set shiftwidth=4
-set expandtab
-set tabstop=4
-set background=dark
-execute pathogen#infect()
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+syntax on                       " enble syntax highlight
+colorscheme gruvbox             " set theme of colors
+set background=dark             " set condition in theme that we use dark/light bg
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+set mouse=a                     " enable mouse
+set nowrap                      " don't wrap lines
+set number                      " enable show number of line
+set noic                        " enable case sensetive
+set hlsearch                    " enable highlight during searching
+set incsearch                   " enable searching mechanism during putting chars
+set history=50                  " (hi) keep 50 lines of command history
+
+set tabstop=4                   " set 4 chars after what editor has stopped
+" set softtabstop
+set shiftwidth=4                " (sw) width (in spaces) used in each step of autoindent (aswell as << and >>)
+set expandtab                   " (et) expand tabs to spaces (use :retab to redo entire file)
+" set smarttab                    " (sta) 'shiftwidth' used in front of a line, but 'tabstop' used otherwise
+set autoindent                  " (ai) turn on auto-indenting (great for programers)
+" set copyindent                  " (ci) when auto-indenting, use the indenting format of the previous line
+
+set showcmd                     " (sc) display an incomplete command in the lower right
+set ruler                       " (ru) show the cursor position at all times
+
+set cursorline                  " highlight current line
+set title                       " show filename in title bar
+set wildmenu                    " show line with autocomplete
+
+set list                        " show whitespaces
+set listchars=tab:▸\ ,trail:·,extends:❯,precedes:❮
+                                " replace default whitespaces to custom
+
+
+" Configurations
+" -----------------------------------------------------------------------------
+
+" ctrlp
+" -----------------------------------------------------------------------------
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\.git$\|\.hg$\|\.svn$\|vendor\|node_modules$\|target$\|project$',
+  \ 'file': '\v\.(exe|so|dll|log|png|jpeg|jpg)$',
+  \ }
+
+
+" NERDTree
+" -----------------------------------------------------------------------------
+let NERDTreeShowHidden=0        " hide hidden files
+let NERDTreeQuitOnOpen=0        " disable quit NERDTree panel when file open
+
+
+" vim-move
+" -----------------------------------------------------------------------------
+let g:move_key_modifier = 'C'   " set hot key as Control
+
+
+" Airline
+" -----------------------------------------------------------------------------
+set laststatus=2
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.branch = '⎇ '
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" display open buffers in tabline
+let g:airline#extensions#tabline#enabled = 1
+
+
+" typescript-vim
+" -----------------------------------------------------------------------------
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
+" Commands
+" -----------------------------------------------------------------------------
+:command! W write
+:command! Wq wq
+
+" Key Mappings
+" -----------------------------------------------------------------------------
+
+" <F9> show/hide NERDTree
+:map <F9> :NERDTreeTabsToggle<CR>
+
+" <F8> show/hide Outline
+nmap <F8> :TagbarToggle<CR>
