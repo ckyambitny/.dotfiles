@@ -136,6 +136,11 @@ let g:airline_symbols.whitespace = 'Ξ'
 let g:airline#extensions#tabline#enabled = 1
 
 
+" Syntastic
+" -----------------------------------------------------------------------------
+let g:syntastic_javascript_checkers = ['eslint', 'jslint', 'jshint']
+
+
 " typescript-vim
 " -----------------------------------------------------------------------------
 autocmd QuickFixCmdPost [^l]* nested cwindow
