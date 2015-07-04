@@ -1,7 +1,7 @@
 # Aliases for shell (bash)
 alias ..='cd ..'
 alias ...='cd ../..'
-alias pro="cd /home/cky/projects/"
+alias pro="cd /home/bartlomiejsobczuk/projects/"
 
 alias repo='git config remote.origin.url' # Print URL to remote repository.
 alias g='git'
@@ -26,3 +26,16 @@ alias lastfile='find . -type f -print0 | xargs -0 stat -f "%m %N" | sort -rn | h
 alias download='wget -L -nv -r -np -e robots=off -m --reject "index.html*"' # Download all content of "Index.of" content.
 alias f='find . -iname'
 alias wifi='nm-applet'
+
+git_fire() {
+
+    if [ -z "$1" ]; then 
+        echo "No arguments supplied"
+        exit;
+    fi
+
+    ga .
+    gc -am "$1"
+    gp
+}
+alias fire=git_fire
