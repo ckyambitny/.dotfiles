@@ -1,0 +1,29 @@
+Aliases
+# Aliases for shell
+alias ..='cd ..'
+alias ...='cd ../..'
+alias pro="cd /home/[user]/projects/"
+
+alias repo='git config remote.origin.url' # Print URL to remote repository.
+alias g='git'
+alias ga='git add'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gbr="git branch -r" # Show only remote branches.
+alias gc='git commit -v'
+alias gcm='git checkout master'
+alias gd='git diff'
+alias gds="git diff --word-diff --unified=0" # Show minimalistic version of different of files.
+alias gk="gitk --all --date-order"
+alias gss='git status -s'
+alias gl='git pull'
+alias gp='git push'
+
+alias ip="ifconfig | grep 'inet '" # Print all inet addresses.
+alias lg="ll -hog" # Short to print content of directory.
+
+alias _='sudo'
+alias lastfile='find . -type f -print0 | xargs -0 stat -f "%m %N" | sort -rn | head -5 | cut -f2- -d" " | xargs ls -ld' # get file with last modified time.
+alias download='wget -L -nv -r -np -e robots=off -m --reject "index.html*"' # Download all content of "Index.of" content.
+alias f='find . -iname'
+"'
