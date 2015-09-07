@@ -1,5 +1,20 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
+map ; :
+map <F4> :q<CR>
+map <F5> :wq<CR>
+
+" Map for easy tab navigation
+nnoremap th  :tabfirst<CR>
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
+" Scrolling rhrough tabs by Shift and h or l
+nnoremap <S-h> gT
+nnoremap <S-l> gt
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -16,7 +31,10 @@ Plugin 'gmarik/Vundle.vim'
 
 " My bundles here:
 Plugin 'flazz/vim-colorschemes'
+"Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+Plugin 'crusoexia/vim-monokai'
 " Colors 
+Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
@@ -62,8 +80,8 @@ filetype plugin indent on    " required
 " Editor
 " ----------------------------------------------------------------------------
 
+colorscheme Monokai
 syntax on                       " enble syntax highlight
-colorscheme gruvbox             " set theme of colors
 set background=dark             " set condition in theme that we use dark/light bg
 
 set mouse=a                     " enable mouse
@@ -72,7 +90,7 @@ set number                      " enable show number of line
 set noic                        " enable case sensetive
 set hlsearch                    " enable highlight during searching
 set incsearch                   " enable searching mechanism during putting chars
-set history=50                  " (hi) keep 50 lines of command history
+set history=100                  " (hi) keep 50 lines of command history
 
 set tabstop=4                   " set 4 chars after what editor has stopped
 " set softtabstop
@@ -109,8 +127,8 @@ let g:ctrlp_custom_ignore = {
 " -----------------------------------------------------------------------------
 let NERDTreeShowHidden=0        " hide hidden files
 let NERDTreeQuitOnOpen=0        " disable quit NERDTree panel when file open
-
-
+let NERDTreeMapOpenInTab='<ENTER>'   " disable hideNERDTree when open new file
+autocmd BufWinEnter * NERDTreeMirror
 " vim-move
 " -----------------------------------------------------------------------------
 let g:move_key_modifier = 'C'   " set hot key as Control
@@ -159,3 +177,19 @@ autocmd QuickFixCmdPost    l* nested lwindow
 
 " <F8> show/hide Outline
 nmap <F8> :TagbarToggle<CR>
+
+:map <C-a> GVgg
+:map <C-o> :e . <Enter>
+:map <C-s> :w <Enter>
+:map <C-c> y
+:map <C-x> d
+:map <C-z> u
+:map <C-t> :tabnew <Enter>
+:map <C-i> >>
+:map <C-f> /
+:map <C-h> :%s/
+:map <S-t> vat
+:map <S-T> vit
+:map <S-{> vi{
+:map <S-(> vi(
+:map <S-[> vi[
