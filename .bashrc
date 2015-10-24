@@ -120,4 +120,5 @@ export NVM_DIR="/home/cky/.nvm"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 #NodeVersionManager start
+nvm use v4.2.1
 xmodmap ~/.Xmodmap
