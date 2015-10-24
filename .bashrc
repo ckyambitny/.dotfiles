@@ -99,7 +99,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.aliases ]; then
+    if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
@@ -120,5 +120,4 @@ export NVM_DIR="/home/cky/.nvm"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 #NodeVersionManager start
-nvm use v0.12.6
 xmodmap ~/.Xmodmap
