@@ -156,7 +156,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Syntastic
 " -----------------------------------------------------------------------------
-let g:syntastic_javascript_checkers = ['eslint', 'jslint', 'jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 
 " typescript-vim
