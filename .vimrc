@@ -31,16 +31,13 @@ Plugin 'gmarik/Vundle.vim'
 
 " My bundles here:
 Plugin 'flazz/vim-colorschemes'
-"Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
-Plugin 'crusoexia/vim-monokai'
-" Colors 
-Plugin 'jelera/vim-javascript-syntax'
+" Colors
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
-" you should have ctags 5.x, recommend: 'brew install ctags' after that set 'alias ctags=/usr/local/Cellar/ctags/5.8/bin/ctags'
+" you should have ctags 5.x, recommend: 'brew install ctags'; after that set'alias ctags=/usr/local/Cellar/ctags/5.8/bin/ctags'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
 Plugin 'Townk/vim-autoclose'
@@ -53,15 +50,14 @@ Plugin 'mattn/emmet-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'jistr/vim-nerdtree-tabs'
 " set the same state of NERDTree in each tab
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+" Plugin 'Xuyuanp/nerdtree-git-plugin'
 " set dirty changes in NERDTree
 Plugin 'elzr/vim-json'
 " support highlight of JSON files
 Plugin 'leafgarland/typescript-vim'
 " support highlight to TypeScript files
 Plugin 'othree/html5.vim'
-" Support HTML5 All of your Plugins must be added before the following line
-
+" Support HTML5
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -69,7 +65,7 @@ filetype plugin indent on    " required
 "filetype plugin on
 "
 " Brief help
-" :PluginList       - lists configured plugins
+" :PluginList "      - lists configured plugins
 " :PluginInstall    - installs plugins append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins append `!` to auto-approve removal
@@ -77,12 +73,13 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" Editor
+" Editor"
 " ----------------------------------------------------------------------------
 
-colorscheme Monokai
+"Kolorki
 syntax on                       " enble syntax highlight
 set background=dark             " set condition in theme that we use dark/light bg
+colorscheme Monokai
 
 set mouse=a                     " enable mouse
 set nowrap                      " don't wrap lines
@@ -156,7 +153,13 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Syntastic
 " -----------------------------------------------------------------------------
+" If i add jslint, checker is active
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_wq = 0
 
 
 " typescript-vim
