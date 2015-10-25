@@ -2,6 +2,7 @@
 alias ..='cd ..'
 alias ...='cd ../..'
 alias pro="cd /home/cky/projects/"
+alias por="cd /home/cky/projects/"
 alias clrvim="rm -i `find . | grep .swp$`"
 
 alias repo='git config remote.origin.url' # Print URL to remote repository.
@@ -22,7 +23,6 @@ alias gl='git pull'
 alias gp='git push'
 alias grhh='git reset --hard HEAD'
 
-alias lol='cd ~/'
 alias ip="ifconfig | grep 'inet '" # Print all inet addresses.
 alias lg="ll -hog" # Short to print content of directory.
 
@@ -30,7 +30,7 @@ alias _='sudo'
 alias lastfile='find . -type f -print0 | xargs -0 stat -f "%m %N" | sort -rn | head -5 | cut -f2- -d" " | xargs ls -ld' # get file with last modified time.
 alias download='wget -L -nv -r -np -e robots=off -m --reject "index.html*"' # Download all content of "Index.of" content.
 alias f='find . -iname'
-alias wifi='nm-applet'
+alias wifi='nm-applet &'
 
 git_fire() {
 
