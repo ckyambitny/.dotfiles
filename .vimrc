@@ -22,13 +22,25 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+" ctrlp ctags alike jump To, <Leader> is simply backslash :)
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+" Syntax highlighting
+let g:ctrlp_funky_matchtype = 'path'
+let g:ctrlp_funky_syntax_highlight = 1
+
+"vim-tags
+let g:vim_tags_auto_generate = 1
+
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 
-
+" YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
 " My bundles here:
 Plugin 'flazz/vim-colorschemes'
 " Colors
@@ -38,16 +50,18 @@ Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
 " you should have ctags 5.x, recommend: 'brew install ctags'; after that set'alias ctags=/usr/local/Cellar/ctags/5.8/bin/ctags'
+Plugin 'szw/vim-tags'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
 Plugin 'Townk/vim-autoclose'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'matze/vim-move'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mattn/emmet-vim'
+Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'mileszs/ack.vim'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'jistr/vim-nerdtree-tabs'
 " set the same state of NERDTree in each tab
 " Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -87,7 +101,7 @@ set number                      " enable show number of line
 set noic                        " enable case sensetive
 set hlsearch                    " enable highlight during searching
 set incsearch                   " enable searching mechanism during putting chars
-set history=100                  " (hi) keep 50 lines of command history
+set history=200                  " (hi) keep 200 lines of command history
 
 set tabstop=4                   " set 4 chars after what editor has stopped
 " set softtabstop
@@ -122,7 +136,7 @@ let g:ctrlp_custom_ignore = {
 
 " NERDTree
 " -----------------------------------------------------------------------------
-let NERDTreeShowHidden=0        " hide hidden files
+let NERDTreeShowHidden=1        " show hidden files
 let NERDTreeQuitOnOpen=0        " disable quit NERDTree panel when file open
 let NERDTreeMapOpenInTab='<ENTER>'   " disable hideNERDTree when open new file
 autocmd BufWinEnter * NERDTreeMirror
@@ -196,3 +210,4 @@ nmap <F8> :TagbarToggle<CR>
 :map <S-{> vi{
 :map <S-(> vi(
 :map <S-[> vi[
+

@@ -23,6 +23,7 @@ alias gcm='git checkout master'
 alias gd='git diff'
 alias gds="git diff --word-diff --unified=0" # Show minimalistic version of different of files.
 alias gk="gitk --all --date-order"
+
 alias gss='git status -s'
 alias gl='git pull'
 alias gp='git push'

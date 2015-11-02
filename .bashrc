@@ -8,6 +8,11 @@ case $- in
       *) return;;
 esac
 
+if [ -f ~/.git-prompt.sh ]; then
+    source ~/.git-prompt.sh
+    #. ~/.git-prompt.sh
+fi
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -103,6 +108,7 @@ if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -120,5 +126,5 @@ export NVM_DIR="/home/cky/.nvm"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 #NodeVersionManager start
-nvm use v4.2.1
+nvm use v5.0.0
 xmodmap ~/.Xmodmap
