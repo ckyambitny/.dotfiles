@@ -18,6 +18,7 @@ alias gk="gitk --all --date-order"
 alias gss='git status -s'
 alias gl='git pull'
 alias gp='git push'
+alias grh='git reset --hard'
 
 alias ip="ifconfig | grep 'inet '" # Print all inet addresses.
 alias lg="ll -hog" # Short to print content of directory.

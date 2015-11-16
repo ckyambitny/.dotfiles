@@ -127,4 +127,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 #NodeVersionManager start
 nvm use v5.0.0
-xmodmap ~/.Xmodmap
+# xmodmap ~/.Xmodmap

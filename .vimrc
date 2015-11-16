@@ -4,6 +4,14 @@ map ; :
 map <F4> :q<CR>
 map <F5> :wq<CR>
 
+
+" Tags globals
+set exrc
+set secure
+
+let g:vim_tags_auto_generate = 1
+let g:vim_tags_project_tags_command = "{CTAGS} -R {OPTIONS} {DIRECTORY} 2>/dev/null"
+
 " Map for easy tab navigation
 nnoremap th  :tabfirst<CR>
 nnoremap tj  :tabnext<CR>
@@ -30,8 +38,6 @@ nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 let g:ctrlp_funky_matchtype = 'path'
 let g:ctrlp_funky_syntax_highlight = 1
 
-"vim-tags
-let g:vim_tags_auto_generate = 1
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
