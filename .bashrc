@@ -128,3 +128,8 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 #NodeVersionManager start
 nvm use v5.0.0
 # xmodmap ~/.Xmodmap
+
+alias static22="ssh bartlomiej.sobczuk@static22.hw.redefine.pl"
+alias static23="ssh bartlomiej.sobczuk@static23.hw.redefine.pl"
+
+
