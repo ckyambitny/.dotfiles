@@ -20,6 +20,9 @@ nnoremap tl  :tablast<CR>
 nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
+
+" Find selection in visual mode
+vnoremap // y/<C-R>"<CR>"
 " Scrolling rhrough tabs by Shift and h or l
 nnoremap <S-h> gT
 nnoremap <S-l> gt
@@ -99,7 +102,7 @@ filetype plugin indent on    " required
 "Kolorki
 syntax on                       " enble syntax highlight
 set background=dark             " set condition in theme that we use dark/light bg
-colorscheme Monokai
+color monokai
 
 set mouse=a                     " enable mouse
 set nowrap                      " don't wrap lines

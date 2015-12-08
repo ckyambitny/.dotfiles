@@ -13,6 +13,28 @@ if [ -f ~/.git-prompt.sh ]; then
     #. ~/.git-prompt.sh
 fi
 
+function git-rename-tag {
+    old=$1
+    new=$2
+
+    test -z $old && echo "old tag name required." 1>&2 && exit 1
+    test -z $new && echo "new tag name required." 1>&2 && exit 1
+
+    git tag $new $old
+    git tag -d $old
+    git push origin :refs/tags/$old
+}
+
+function git-refresh-tags {
+    git tag -l | xargs git tag -d
+    git fetch
+}
+
+# Git prompt
+#export GITAWAREPROMPT=~/.bash/git-aware-prompt
+#source "${GITAWAREPROMPT}/main.sh"
+
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
