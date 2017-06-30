@@ -1,7 +1,7 @@
 # Aliases for shell (bash)
 alias ..='cd ..'
 alias ...='cd ../..'
-# alias pro='cd /home/cky/projects/'
+alias pro='cd ~/projects/'
 # alias por='cd /home/cky/projects/'
 alias clrvim='rm -i `find . | grep .swp$`'
 # dopracować logout
