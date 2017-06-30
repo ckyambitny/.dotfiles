@@ -3,6 +3,7 @@
 wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
 cp -v .gitignore ~/.gitignore
 cp -v .aliases ~/.aliases
+cp -v .env.sh ~/.env.sh
 cp -v .profile ~/.profile
 cp -v .gitconfig ~/.gitconfig
 cp -v .vimrc ~/.vimrc
