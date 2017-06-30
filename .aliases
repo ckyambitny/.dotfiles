@@ -1,11 +1,11 @@
 # Aliases for shell (bash)
 alias ..='cd ..'
 alias ...='cd ../..'
-alias pro='cd /home/cky/projects/'
-alias por='cd /home/cky/projects/'
+# alias pro='cd /home/cky/projects/'
+# alias por='cd /home/cky/projects/'
 alias clrvim='rm -i `find . | grep .swp$`'
 # dopracować logout
-alias won="gnome-screensacommand -l"
+# alias won="gnome-screensacommand -l"
 
 alias repo='git config remote.origin.url' # Print URL to remote repository.
 alias g='git'

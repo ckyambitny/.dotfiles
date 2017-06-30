@@ -156,16 +156,16 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 
-export NVM_DIR="/home/cky/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+#export NVM_DIR="~/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 #NodeVersionManager start
-nvm use v6.1.0
+#nvm use v6.1.0
 
 
-export PATH=$PATH:$HOME/.git-radar
-export PATH=$PATH:$HOME/.git-radar
+#export PATH=$PATH:$HOME/.git-radar
+#export PATH=$PATH:$HOME/.git-radar
 
-export PS1="$PS1\$(git-radar --bash --fetch)"
+#export PS1="$PS1\$(git-radar --bash --fetch)"

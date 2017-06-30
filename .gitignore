@@ -1,7 +1,23 @@
-.*.swp
-.*.swo
+# windows
+$RECYCLE.BIN/
+Desktop.ini
+*.db
+*.autosave
+
+# linux
 *~
-.*.swn
-.*.hot-update.*
-.idea
-tags
+.directory
+
+# mac
+.Spotlight-V100/
+.Trashes/
+.DS_Store
+._*
+
+# ide, albo nie ide
+.idea/
+.settings/
+.project
+nbproject/
+*.swp
+.vscode
