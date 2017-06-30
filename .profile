@@ -168,4 +168,4 @@ fi
 #export PATH=$PATH:$HOME/.git-radar
 #export PATH=$PATH:$HOME/.git-radar
 
-#export PS1="$PS1\$(git-radar --bash --fetch)"
+export PS1="$PS1\$(git-radar --bash --fetch)"
