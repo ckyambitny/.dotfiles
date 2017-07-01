@@ -1,6 +1,9 @@
 #!/usr/bin/zsh
 
-export EDITOR="webstorm"
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
 
 source $HOME/.aliases
 

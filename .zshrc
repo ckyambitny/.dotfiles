@@ -1,7 +1,7 @@
 # Set theme
 ZSH_THEME=""
 
-plugins=(git colored-man colorize github jira pip brew osx zsh-syntax-highlighting)
+plugins=(git git-completion colored-man colorize github jira pip brew osx zsh-syntax-highlighting)
 
 # Add env.sh
 source ~/.env.sh

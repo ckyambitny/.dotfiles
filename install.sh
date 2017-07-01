@@ -6,7 +6,10 @@ brew install node
 brew install wget
 
 # git completion
-wget https://github.com/git/git/blob/master/contrib/completion/git-completion.zsh -O ~/.git-completion.zsh
+
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh -O ~/.git-completion.zsh
+
 
 # ZSH
 brew install zsh zsh-completions
@@ -16,8 +19,8 @@ chsh -s /usr/local/bin/zsh
 
 npm install --global pure-prompt
 
-if [ -f ~/.git-completion.zsh ]; then
-      . ~/.git-completion.zsh
+if [ -f ~/.git-completion.bash ]; then
+      . ~/.git-completion.bash
 
     # Lets make aliases autocomplete!
     __git_complete g __git_main
