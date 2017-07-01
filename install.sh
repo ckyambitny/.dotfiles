@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 
-wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew update
+
+# ZSH
+brew install zsh zsh-completions
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+chsh -s /usr/local/bin/zsh
+
 cp -v .gitignore ~/.gitignore
-cp -v .aliases ~/.aliases
 cp -v .env.sh ~/.env.sh
+cp -v .zshrc ~/.zshrc
+cp -v .aliases ~/.aliases
 cp -v .profile ~/.profile
 cp -v .gitconfig ~/.gitconfig
-cp -v .vimrc ~/.vimrc
-vim +PluginInstall +qall
 
 #cd ~ && git clone https://github.com/michaeldfallen/git-radar .git-radar

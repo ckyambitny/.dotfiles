@@ -2,7 +2,7 @@
 	name = Bartłomiej Sobczuk
 	email = bartlomiej.sobczuk@gmail.com
 [core]
-	editor = webstorms
+	editor = webstorm
 	excludesfile = ~/.gitignore
 [push]
 	default = matching
