@@ -32,6 +32,9 @@ alias gbsrt="git for-each-ref --sort='-committerdate' --format='%(refname)%09%(c
 alias ip="ifconfig | grep 'inet '" # Print all inet addresses.
 alias lg='ll -hog' # Short to print content of directory.
 
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 alias _='sudo'
 alias lastfile='find . -type f -print0 | xargs -0 stat -f "%m %N" | sort -rn | head -5 | cut -f2- -d" " | xargs ls -ld' # get file with last modified time.
 alias download='wget -L -nv -r -np -e robots=off -m --reject "index.html*"' # Download all content of "Index.of" content.
